@@ -1,0 +1,164 @@
+/********** Custom CSS ************/
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6f6f6f;
+    text-align: left;
+    background-color: #fff;
+    font-family: "Poppins", sans-serif !important;
+}
+.font-weight-medium {
+    font-weight: 500;
+}
+.section-title {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #1c1c1c;
+}
+.text-danger {
+    color: #dc3545 !important;
+}
+.control-group {
+    padding-top: 18px;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #f8f0ef;
+    outline: 0;
+    box-shadow: none;
+}
+.text-contact {
+    font-family: "Poppins", sans-serif !important;
+}
+.fa {
+    padding-right: 14px;
+    color: #6f6f6f !important;
+}
+.btn-primary {
+    color: #d8e0e7;
+    background-color: #0e0b0b;
+    border-color: #0e0b0b;
+    margin-top: 15px;
+}
+.font-weight-semi-bold {
+    font-weight: 600;
+}
+
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+    font-size: inherit;
+    margin-left: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 20px 10px;
+    color: #1c1c1c;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #d19c97;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        padding: 5px 0px;
+    }
+}
+
+.navbar-vertical.navbar-light .navbar-nav .nav-link {
+    padding: 8px 30px;
+    border-bottom: 1px solid #edf1ff;
+}
+
+#header-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #1c1c1c;
+}
+
+.section-title span {
+    position: relative;
+    background: #ffffff;
+    z-index: 1;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+    background: #1c1c1c;
+}
+
+.offer img {
+    position: absolute;
+    max-width: 50%;
+    max-height: 90%;
+    bottom: 0;
+}
+
+.offer .text-md-right img {
+    left: 0;
+}
+
+.offer .text-md-left img {
+    right: 0;
+}
+
+.cat-item .cat-img img,
+.product-item .product-img img {
+    transition: 0.5s;
+}
+
+.cat-item:hover .cat-img img,
+.product-item:hover .product-img img {
+    transform: scale(1.2);
+}
+
+.product-item .btn:hover {
+    color: #d19c97 !important;
+}
+
+.contact-form .help-block ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 11;
+    animation: action 1s infinite alternate;
+}
+
+@keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
