@@ -57,9 +57,9 @@ const Header = () => {
       {/* Header */}
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand col-4 col-lg-2 ms-lg-5 ms-4" href="#">
+          <Link class="navbar-brand col-4 col-lg-2 ms-lg-5 ms-4" to="/">
             <img src="/images/logo.png" alt="" class="ms-lg-5 d-inline-block align-text-top" />
-          </a>
+          </Link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
