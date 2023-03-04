@@ -4,7 +4,7 @@ const Footer = () => {
 
   return (
     <>
-      <a id="myBtn" href="#top"><i class="fa-solid fa-angles-up"></i></a>
+      {/*<a id="myBtn" href="#top"><i class="fa-solid fa-angles-up"></i></a>*/}
       <div className="footer" id="footer">
         <div class="row border-top border-light mx-xl-5 py-4 justify-content-center d-flex">
           <div class="col-md-6 px-xl-0 no-warp">
