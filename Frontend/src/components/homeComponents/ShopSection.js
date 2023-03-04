@@ -104,11 +104,7 @@ const ShopSection = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <div className="container-fluid" id="listproduct">
-=======
       <div className="container-fluid" id="Product">
->>>>>>> a448d48da757b15c580f7dd56f92460359261a41
         <div className="section">
           <div className="row">
             <div className="col-lg-12 col-md-12">

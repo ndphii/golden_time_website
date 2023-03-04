@@ -35,10 +35,10 @@ const Header = () => {
               </p>
             </div>
             <div className=" col-12 col-lg-6 justify-content-center justify-content-lg-end d-flex align-items-center">
-              <Link to="">
+              <a href="https://www.facebook.com/">
                 <i className="fab fa-facebook-f"></i>
-              </Link>
-              <Link to="">
+              </a>
+              <a href="https://www.instagram.com/">
                 <i className="fab fa-instagram"></i>
               </a>
               <a href="https://www.linkedin.com/">
@@ -55,125 +55,83 @@ const Header = () => {
         </div>
       </div>
       {/* Header */}
-      <div className="header">
-        <div className="container">
-          {/* MOBILE HEADER */}
-          <div className="mobile-header">
-            <div className="container ">
-              <div className="row ">
-                <div className="col-6 d-flex align-items-center">
-                  <Link className="navbar-brand" to="/">
-                    <img alt="logo" src="/images/logo.png" />
-                  </Link>
-                </div>
-                <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
-                  {userInfo ? (
-                    <div className="btn-group">
-                      <button
-                        type="button"
-                        className="name-button dropdown-toggle"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i className="fas fa-user"></i>
-                      </button>
-                      <div className="dropdown-menu">
-                        <Link className="dropdown-item" to="/profile">
-                          Profile
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="#"
-                          onClick={logoutHandler}
-                        >
-                          Logout
-                        </Link>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="btn-group">
-                      <button
-                        type="button"
-                        className="name-button dropdown-toggle"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i className="fas fa-user"></i>
-                      </button>
-                      <div className="dropdown-menu">
-                        <Link className="dropdown-item" to="/login">
-                          Login
-                        </Link>
-                        <Link className="dropdown-item" to="/register">
-                          Register
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                  <Link to="/cart" className="cart-mobile-icon">
-                    <i className="fas fa-shopping-bag"></i>
-                    <span className="badge">{cartItems.length}</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* PC HEADER */}
-          <div className="pc-header">
-            <div className="row">
-              <div className="col-md-3 col-4 d-flex align-items-center">
-                <Link className="navbar-brand" to="/">
-                  <img alt="logo" src="/images/logo.png" />
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand col-4 col-lg-2 ms-lg-5 ms-4" href="#">
+            <img src="/images/logo.png" alt="" class="ms-lg-5 d-inline-block align-text-top" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto fs-5 mb-2 ms-lg-0 ms-3 mt-lg-0 mt-3 lh-lg mb-lg-0">
+              <li class="nav-item">
+                <Link class="nav-link active" aria-current="page" to="/">
+                  Home
                 </Link>
-              </div>
-              <div className="col-md-6 col-8 d-flex align-items-center"></div>
-              <div className="col-md-3 d-flex align-items-center justify-content-end Login-Register">
-                {userInfo ? (
-                  <div className="btn-group">
-                    <button
-                      type="button"
-                      className="name-button dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#Product">
+                  Product
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Watchnews">Watch News</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contacts
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#Contact">Contact Queries</a></li>
+                  <li><a class="dropdown-item" href="#Emaillatestsale">RECEIVE SALE INFORMATION</a></li>
+                  <li><hr class="dropdown-divider text-light" /></li>
+                  <li><a class="dropdown-item" href="#">137 Nguyễn Thị Thập,..., Đà Nẵng <small className="text-primary">(map)</small></a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex rounded-3 bg-dark p-2 me-lg-4">
+              <Link to="/cart" className="cart-mobile-icon align-text-top d-flex me-2">
+                <i className="fa-solid fa-cart-shopping mt-2 text-light  align-self-center fs-3 me-2"></i>
+                <span className="fw-bold text-danger me-2">{cartItems.length}</span>
+              </Link>
+              {userInfo ? (
+                <div class="dropdown  ">
+                  <button class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-user pe-1"></i>{userInfo.name}
+                  </button>
+
+                  <ul class="dropdown-menu dropdown-menu-end margin-block-start" aria-labelledby="dropdownMenuLink">
+                    <li><Link className="dropdown-item" to="/profile">
+                      Profile
+                    </Link></li>
+                    <li><Link
+                      className="dropdown-item"
+                      to="#"
+                      onClick={logoutHandler}
                     >
-                      Hi, {userInfo.name}
-                    </button>
-                    <div className="dropdown-menu">
-                      <Link className="dropdown-item" to="/profile">
-                        Profile
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="#" onClick={logoutHandler}>
-                        Logout
-                      </Link>
-                    </li>
+                      Logout
+                    </Link></li>
                   </ul>
                 </div>
+
               ) : (
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i className="fas fa-user"></i>
-                </button>
-                <ul class="margin-block-start dropdown-menu dropdown-menu-end  " aria-labelledby="dropdownMenuButton1">
-                  <li>
-                    <Link className="dropdown-item" to="/login">
+
+                <div class="dropdown ">
+                  <button class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-user"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end margin-block-start" aria-labelledby="dropdownMenuLink">
+                    <li><Link className="dropdown-item" to="/login">
                       Login
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/register">
+                    </Link></li>
+                    <li><Link className="dropdown-item" to="/register">
                       Register
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                    </Link></li>
+                  </ul>
+                </div>
               )}
-            </div>
+            </form>
           </div>
         </div>
       </nav>
