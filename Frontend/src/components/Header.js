@@ -27,9 +27,9 @@ const Header = () => {
               <p>goldentime@gmail.com</p>
             </div>
             <div className=" col-12 col-lg-6 justify-content-center justify-content-lg-end d-flex align-items-center">
-              <Link to="">
+              <a href="https://www.facebook.com/ndphii/">
                 <i className="fab fa-facebook-f"></i>
-              </Link>
+              </a>
               <Link to="">
                 <i className="fab fa-instagram"></i>
               </Link>
@@ -57,6 +57,7 @@ const Header = () => {
                   <Link className="navbar-brand" to="/">
                     <img alt="logo" src="/images/logo.png" />
                   </Link>
+
                 </div>
                 <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
                   {userInfo ? (
@@ -120,6 +121,7 @@ const Header = () => {
                 <Link className="navbar-brand" to="/">
                   <img alt="logo" src="/images/logo.png" />
                 </Link>
+                <a href="#listproduct" style={{ color: "black" }}>go to listproduct</a>
               </div>
               <div className="col-md-6 col-8 d-flex align-items-center"></div>
               <div className="col-md-3 d-flex align-items-center justify-content-end Login-Register">
