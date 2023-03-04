@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../redux/Actions/UserActions";
-
+import "./header_footer.css"
 const Header = () => {
   const dispatch = useDispatch();
 
@@ -16,32 +16,40 @@ const Header = () => {
     dispatch(logout());
   };
 
+  const handleclick = () => {
+    alert("ok");
+  }
+
   return (
     <div>
       {/* Top Header */}
-      <div className="Announcement ">
+      <div className="Announcement " id="top">
         <div className="container">
           <div className="row">
             <div className="col-md-6 d-flex align-items-center display-none">
-              <p>+84 788 030 999</p>
-              <p>goldentime@gmail.com</p>
+              <p className="d-flex">
+                <i class="fa-solid fa-phone pe-2 pt-1"></i>
+                : +84 788 030 999
+                <i class="fa-solid fa-envelope pe-2 pt-1 ps-5" ></i>
+                : goldentime@gmail.com
+              </p>
             </div>
             <div className=" col-12 col-lg-6 justify-content-center justify-content-lg-end d-flex align-items-center">
-              <a href="https://www.facebook.com/ndphii/">
+              <Link to="">
                 <i className="fab fa-facebook-f"></i>
-              </a>
+              </Link>
               <Link to="">
                 <i className="fab fa-instagram"></i>
-              </Link>
-              <Link to="">
+              </a>
+              <a href="https://www.linkedin.com/">
                 <i className="fab fa-linkedin-in"></i>
-              </Link>
-              <Link to="">
+              </a>
+              <a href="https://www.youtube.com/">
                 <i className="fab fa-youtube"></i>
-              </Link>
-              <Link to="">
+              </a>
+              <a href="https://www.pinterest.com/">
                 <i className="fab fa-pinterest-p"></i>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -57,7 +65,6 @@ const Header = () => {
                   <Link className="navbar-brand" to="/">
                     <img alt="logo" src="/images/logo.png" />
                   </Link>
-
                 </div>
                 <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
                   {userInfo ? (
@@ -121,7 +128,6 @@ const Header = () => {
                 <Link className="navbar-brand" to="/">
                   <img alt="logo" src="/images/logo.png" />
                 </Link>
-                <a href="#listproduct" style={{ color: "black" }}>go to listproduct</a>
               </div>
               <div className="col-md-6 col-8 d-flex align-items-center"></div>
               <div className="col-md-3 d-flex align-items-center justify-content-end Login-Register">
@@ -140,30 +146,37 @@ const Header = () => {
                       <Link className="dropdown-item" to="/profile">
                         Profile
                       </Link>
-                      <Link
-                        className="dropdown-item"
-                        to="#"
-                        onClick={logoutHandler}
-                      >
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="#" onClick={logoutHandler}>
                         Logout
                       </Link>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <Link to="/Register">Register</Link>
-                    <Link to="/login">Login</Link>
-                  </>
-                )}
-                <Link to="/cart">
-                  <i className="fas fa-shopping-bag"></i>
-                  <span className="badge">{cartItems.length}</span>
-                </Link>
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i className="fas fa-user"></i>
+                </button>
+                <ul class="margin-block-start dropdown-menu dropdown-menu-end  " aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <Link className="dropdown-item" to="/login">
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/register">
+                      Register
+                    </Link>
+                  </li>
+                </ul>
               </div>
+              )}
             </div>
           </div>
         </div>
-      </div>
+      </nav>
       {/* Carousel */}
 
       <div id="carouselExampleCaptions" class="carousel container-fluid slide" data-bs-ride="carousel">

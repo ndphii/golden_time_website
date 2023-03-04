@@ -15,7 +15,7 @@ const Pagination = ({
 
   return (
     <nav>
-      <ul className="pagination justify-content-center">
+      <ul className="pagination justify-content-center ">
         {pageNumbers.map((number) => (
           <li
             className={`page-item ${currentPage === number ? "active" : ""}`}
