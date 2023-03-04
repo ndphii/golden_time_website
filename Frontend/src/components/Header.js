@@ -34,11 +34,11 @@ const Header = () => {
                 : goldentime@gmail.com
               </p>
             </div>
-            <div className=" col-12 col-lg-6 justify-content-center justify-content-lg-end  d-flex align-items-center ">
-              <a href="https://www.facebook.com/">
+            <div className=" col-12 col-lg-6 justify-content-center justify-content-lg-end d-flex align-items-center">
+              <Link to="">
                 <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://www.instagram.com/">
+              </Link>
+              <Link to="">
                 <i className="fab fa-instagram"></i>
               </a>
               <a href="https://www.linkedin.com/">
@@ -55,52 +55,94 @@ const Header = () => {
         </div>
       </div>
       {/* Header */}
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top  ">
-        <div class="container-fluid">
-          <Link className="navbar-brand col-lg-2 col-4 d-flex justify-content-center" to="/">
-            <img alt="logo" src="/images/logo.png" />
-          </Link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse " id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll overflow-y " >
-              <li class="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Product">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#Watchnews">Watch News</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Contact
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                  <li><a class="dropdown-item" href="#Contact">Contact Queries</a></li>
-                  <li><a class="dropdown-item" href="#Emaillatestsale">Sign up for free and get the latest sale</a></li>
-                  <li><hr class="dropdown-divider text-white" /></li>
-                  <li><a class="dropdown-item" href="https://goo.gl/maps/7tgZTdygqcfWtonm9">137 Nguyễn Thị Thập...Đà Nẵng<small className="text-primary"> (map)</small></a></li>
-                </ul>
-              </li>
-            </ul>
-            <span class="navbar-text me-5">
-              BEGIN YOUR OWN TRADITIONAL
-            </span>
-            <div class="d-flex btn btn-dark">
-              <Link to="/cart" className="d-flex me-4 ms-1 ">
-                <i class="fa-solid fa-cart-shopping pt-3 fs-5 text-light"></i>
-                <p class="d-flex align-text-top text-danger ms-1 fw-bold ">{cartItems.length}</p>
-              </Link>
-              {userInfo ? (
-                <div class="dropdown">
-                  <button class="btn  btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i className="fas fa-user fs-5 pt-1"></i> {userInfo.name}
-                  </button>
-                  <ul class="margin-block-start dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuButton1">
-                    <li>
+      <div className="header">
+        <div className="container">
+          {/* MOBILE HEADER */}
+          <div className="mobile-header">
+            <div className="container ">
+              <div className="row ">
+                <div className="col-6 d-flex align-items-center">
+                  <Link className="navbar-brand" to="/">
+                    <img alt="logo" src="/images/logo.png" />
+                  </Link>
+                </div>
+                <div className="col-6 d-flex align-items-center justify-content-end Login-Register">
+                  {userInfo ? (
+                    <div className="btn-group">
+                      <button
+                        type="button"
+                        className="name-button dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i className="fas fa-user"></i>
+                      </button>
+                      <div className="dropdown-menu">
+                        <Link className="dropdown-item" to="/profile">
+                          Profile
+                        </Link>
+                        <Link
+                          className="dropdown-item"
+                          to="#"
+                          onClick={logoutHandler}
+                        >
+                          Logout
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="btn-group">
+                      <button
+                        type="button"
+                        className="name-button dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i className="fas fa-user"></i>
+                      </button>
+                      <div className="dropdown-menu">
+                        <Link className="dropdown-item" to="/login">
+                          Login
+                        </Link>
+                        <Link className="dropdown-item" to="/register">
+                          Register
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                  <Link to="/cart" className="cart-mobile-icon">
+                    <i className="fas fa-shopping-bag"></i>
+                    <span className="badge">{cartItems.length}</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* PC HEADER */}
+          <div className="pc-header">
+            <div className="row">
+              <div className="col-md-3 col-4 d-flex align-items-center">
+                <Link className="navbar-brand" to="/">
+                  <img alt="logo" src="/images/logo.png" />
+                </Link>
+              </div>
+              <div className="col-md-6 col-8 d-flex align-items-center"></div>
+              <div className="col-md-3 d-flex align-items-center justify-content-end Login-Register">
+                {userInfo ? (
+                  <div className="btn-group">
+                    <button
+                      type="button"
+                      className="name-button dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Hi, {userInfo.name}
+                    </button>
+                    <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/profile">
                         Profile
                       </Link>
@@ -113,23 +155,23 @@ const Header = () => {
                   </ul>
                 </div>
               ) : (
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i className="fas fa-user"></i>
-                  </button>
-                  <ul class="margin-block-start dropdown-menu dropdown-menu-end  " aria-labelledby="dropdownMenuButton1">
-                    <li>
-                      <Link className="dropdown-item" to="/login">
-                        Login
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="/register">
-                        Register
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i className="fas fa-user"></i>
+                </button>
+                <ul class="margin-block-start dropdown-menu dropdown-menu-end  " aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <Link className="dropdown-item" to="/login">
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/register">
+                      Register
+                    </Link>
+                  </li>
+                </ul>
+              </div>
               )}
             </div>
           </div>
