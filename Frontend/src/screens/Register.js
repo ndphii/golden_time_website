@@ -7,7 +7,7 @@ import Message from "./../components/LoadingError/Error";
 import Loading from "./../components/LoadingError/Loading";
 
 const Register = ({ location, history }) => {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 500);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

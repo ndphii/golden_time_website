@@ -1,6 +1,9 @@
 import React from "react";
 import "./contact.css";
 const ContactInfo = () => {
+  const sendMessageButton = () => {
+    alert("Chúng tôi đã ghi nhận phản hồi của bạn");
+  }
   return (
     <>
       <div className="container pt-4  " id="Watchnews">
@@ -79,7 +82,7 @@ const ContactInfo = () => {
                   <p class="help-block text-danger"></p>
                 </div>
                 <div>
-                  <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
+                  <button class="btn btn-primary py-2 px-4" type="submit" value="Reset" onClick={sendMessageButton} id="sendMessageButton">Send
                     Message</button>
                 </div>
               </form>

@@ -7,7 +7,7 @@ import Loading from "./../components/LoadingError/Loading";
 import { login } from "./../redux/Actions/UserActions";
 
 const Login = ({ location, history }) => {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 500);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

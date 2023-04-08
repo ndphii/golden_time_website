@@ -16,9 +16,7 @@ const Header = () => {
     dispatch(logout());
   };
 
-  const handleclick = () => {
-    alert("ok");
-  }
+
 
   return (
     <div>
@@ -71,20 +69,22 @@ const Header = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="#Product">
+                <a class="nav-link " aria-current="page" href="/#Product">
                   Product
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#Watchnews">Watch News</a>
+                <a class="nav-link " aria-current="page" href="/#Watchnews">
+                  Watch News
+                </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Contacts
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#Contact">Contact Queries</a></li>
-                  <li><a class="dropdown-item" href="#Emaillatestsale">RECEIVE SALE INFORMATION</a></li>
+                  <li><a class="dropdown-item" href="/#Contact">Contact Queries</a></li>
+                  <li><a class="dropdown-item" href="/#Emaillatestsale">RECEIVE SALE INFORMATION</a></li>
                   <li><hr class="dropdown-divider text-light" /></li>
                   <li><a class="dropdown-item" href="#">137 Nguyễn Thị Thập,..., Đà Nẵng <small className="text-primary">(map)</small></a></li>
                 </ul>

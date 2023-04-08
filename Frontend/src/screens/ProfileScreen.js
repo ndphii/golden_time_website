@@ -8,7 +8,7 @@ import { getUserDetails } from "../redux/Actions/UserActions";
 import Orders from "./../components/profileComponents/Orders";
 
 const ProfileScreen = () => {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 400);
 
   const dispatch = useDispatch();
 
